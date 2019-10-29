@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-set -x
-
 #echo $RANDOM
 
 wav_path=$HOME/Musik/wav
