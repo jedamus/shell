@@ -1,18 +1,18 @@
-#!/bin/zsh
+#!/bin/bash
 
 # set -x
 
 #echo $RANDOM
 
 wav_path=$HOME/Musik/wav
+wav_what=*.wav
 
 tmpfile=/tmp/play_music_wav.in.tmp
 tmpfile2=/tmp/play_music_wav.out.tmp
-shfile=/tmp/play_music_wav.out.sh
+shfile=/tmp/play_music_wav.sh
 
 cd $wav_path
-#ls */*/*.mp3 | sed 's/ /\\ /g' | sed "s/'/\\\\'/g" | sed 's/-/\\-/g' | sed 's/[(]/\\(/g' | sed 's/[)]/\\)/g' | sed 's/$/ \\/g' >> $tmpfile
-ls *.wav | sed "s/'/\\'/g" | sed 's/\([\(\) -\&]\)/\\\1/g' | sed 's/$/ \\/g' | sed 's/\\\//\//g' | sed 's/\\\././g' > $tmpfile
+ls $wav_what | sed "s/'/\\'/g" | sed 's/\([\(\) -\&]\)/\\\1/g' | sed 's/$/ \\/g' | sed 's/\\\//\//g' | sed 's/\\\././g' > $tmpfile
 
 randomize_file $tmpfile $tmpfile2 $RANDOM
 
