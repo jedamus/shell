@@ -16,7 +16,7 @@ ls */*/*.mp3 | sed "s/'/\\'/g" | sed 's/\([\(\) -\&]\)/\\\1/g' | sed 's/$/ \\/g'
 
 randomize_file $tmpfile $tmpfile2 $RANDOM
 
-echo "'!/bin/sh" > $shfile
+echo "#!/bin/sh" > $shfile
 echo "cd $mp3_path" >> $shfile
 echo -n "totem --play-pause " >> $shfile
 cat $tmpfile2 | sed 's/^!//' >> $shfile
