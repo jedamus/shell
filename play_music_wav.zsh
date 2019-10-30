@@ -1,4 +1,7 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
+
+# erzeugt Mittwoch, 30. Oktober 2019 12:56 (C) 2019 von Leander Jedamus
+# modifiziert Mittwoch, 30. Oktober 2019 12:58 von Leander Jedamus
 
 # set -x
 
@@ -26,3 +29,6 @@ $shfile
 
 #FILES=`cat $tmpfile2`
 #totem --play-pause $FILES
+
+# vim:ai sw=2
+
