@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+# erzeugt Donnerstag, 24. Januar 2019 14:15 (C) 2019 von Leander Jedamus
+# modifiziert Mittwoch, 21. Oktober 2020 05:55 von Leander Jedamus
+# modifiziert Donnerstag, 26. März 2020 13:09 von Leander Jedamus
+# modifiziert Donnerstag, 24. Januar 2019 14:30 von Leander Jedamus
+
+#set -x
+
+USER=__USER__
+
+usage() {
+  echo "usage: $0 <dir>"
+  exit 0
+};# usage()
+
+if [ -z $1 ]; then
+  usage
+else
+  case "$1" in
+    --help)     usage
+                ;;
+  esac
+fi
+
+find $1 -type d -exec chmod a+rx {} \;
+find $1 -type f -exec chmod a+r {} \;
+find $1 -type d -exec chown ${USER}:${USER} {} \;
+find $1 -type f -exec chown ${USER}:${USER} {} \;
+
+# vim:ai sw=2
+
