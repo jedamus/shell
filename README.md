@@ -1,9 +1,7 @@
 # shell
 
-## install
+## Getting started
 
 ```
-mkdir $HOME/bin
-cd $HOME/Projekte/shell
-cp -p .* $HOME/bin
+sh ./install.sh
 ```
