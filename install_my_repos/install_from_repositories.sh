@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Montag, 14. Dezember 2020 18:29 von Leander Jedamus
+# modifiziert Montag, 14. Dezember 2020 21:30 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
 # modifiziert Donnerstag, 10. Dezember 2020 16:28 von Leander Jedamus
 # modifiziert Freitag, 04. Dezember 2020 18:45 von Leander Jedamus
@@ -12,6 +12,12 @@ HOME="$HOME/repositories"
 
 # modify this to reflect your printers!
 printers="laserjet duplex"
+
+if [ -z $1 ];then
+  mode=auto
+else
+  mode=$1
+fi
 
 my_path=`pwd`
 
@@ -27,9 +33,11 @@ clone()
   echo ""
 };# clone
 
-## echo "After entering your password, write the following to change the shell:"
-## echo "\"/bin/zsh\":"
-## chsh
+if [ ! $mode = "auto" ]; then
+  echo "After entering your password, write the following to change the shell:"
+  echo "\"/bin/zsh\":"
+  chsh
+fi
 
 mkdir -p $HOME
 cd $HOME
@@ -87,7 +95,11 @@ bin=$HOME/bin
 mkdir -p $bin
 
 cd $HOME/Projekte/git
-sh install.sh "Test User" "testuser@example.org"
+if [ ! $mode = "auto" ]; then
+  sh install.sh
+else
+  sh install.sh "Test User" "testuser@example.org"
+fi
 sh install_linux.sh
 
 cd $HOME/Projekte/shell
