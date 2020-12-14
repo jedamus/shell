@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Montag, 14. Dezember 2020 21:30 von Leander Jedamus
+# modifiziert Montag, 14. Dezember 2020 21:49 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
 # modifiziert Donnerstag, 10. Dezember 2020 16:28 von Leander Jedamus
 # modifiziert Freitag, 04. Dezember 2020 18:45 von Leander Jedamus
@@ -46,7 +46,7 @@ clone vim-python .vim
 
 mkdir Projekte
 cd Projekte
-mkdir perl python deb c automake
+mkdir perl python c automake deb docker
 clone mygit git
 clone my_dotfiles dotfiles
 clone qpython-scripts qpython
@@ -82,6 +82,10 @@ cd ..
 
 cd deb
 clone deb_randomizefile randomizefile
+cd ..
+
+cd docker
+clone install_my_repos install_my_repos
 cd ..
 
 cd ..
