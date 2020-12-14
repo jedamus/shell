@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Montag, 14. Dezember 2020 15:03 von Leander Jedamus
+# modifiziert Montag, 14. Dezember 2020 18:29 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
 # modifiziert Donnerstag, 10. Dezember 2020 16:28 von Leander Jedamus
 # modifiziert Freitag, 04. Dezember 2020 18:45 von Leander Jedamus
@@ -91,15 +91,7 @@ sh install.sh "Test User" "testuser@example.org"
 sh install_linux.sh
 
 cd $HOME/Projekte/shell
-cp -vp *.sh *.zsh *.modify_me $bin
-echo ""
-
-CH=chmodchown
-echo "modifying ${CH}.modify_me to ${CH}.sh"
-cat ${CH}.modify_me | sed "s/__USER__/${USER}/" > ${CH}.sh
-echo "removing ${CH}.modify_me"
-rm -f ${CH}.modify_me
-chmod +x ${CH}.sh
+sh ./install.sh
 echo ""
 
 cd $HOME
