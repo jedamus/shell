@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Samstag, 21. März 2020 11:36 (C) 2020 von Leander Jedamus
+# modifiziert Freitag, 04. Dezember 2020 13:32 von Leander Jedamus
+# modifiziert Donnerstag, 03. Dezember 2020 19:39 von Leander Jedamus
 # modifiziert Dienstag, 01. Dezember 2020 08:59 von Leander Jedamus
 # modifiziert Donnerstag, 19. November 2020 09:30 von Leander Jedamus
 # modifiziert Montag, 26. Oktober 2020 10:32 von Leander Jedamus
@@ -51,8 +53,8 @@ cp -p .zsh/zshprompt.py $bin
 cp -p .zsh/.zshrc .zsh/.myenv $HOME
 
 # install vim
-cp -p vim/.exrc $HOME
-cp -p vim/.vimrc3 $HOME/.vimrc
+cp -p .vim/.exrc $HOME
+#cp -p .vim/.vimrc3 $HOME/.vimrc
 
 # install Projekte
 my_print=$HOME/print

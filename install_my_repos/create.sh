@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Samstag, 21. März 2020 13:53 (C) 2020 von Leander Jedamus
+# modifiziert Samstag, 05. Dezember 2020 08:38 von Leander Jedamus
+# modifiziert Freitag, 04. Dezember 2020 18:47 von Leander Jedamus
 # modifiziert Donnerstag, 03. Dezember 2020 17:20 von Leander Jedamus
 # modifiziert Mittwoch, 02. Dezember 2020 13:55 von Leander Jedamus
 # modifiziert Sonntag, 22. November 2020 09:57 von Leander Jedamus
@@ -33,13 +35,13 @@ tar cvfz $dir/zsh.tar.gz ./.zsh ./todo.txt
 
 bin=./bin
 
-tar cvfz $dir/bin.tar.gz $bin/nocaps.sh $bin/gitinit.sh $bin/rep.sh $bin/evince.sh $bin/ogg.sh $bin/my_options.sh $bin/grep_in_dpkg.sh $bin/chmodchown.modify_me $bin/mount_iso.sh $bin/man2pdf.sh $bin/man2ps.sh $bin/update.sh $bin/notebook.sh $bin/conda_init.sh
+tar cvfz $dir/bin.tar.gz $bin/nocaps.sh $bin/gitinit.sh $bin/rep.sh $bin/evince.sh $bin/ogg.sh $bin/my_options.sh $bin/grep_in_dpkg.sh $bin/chmodchown.modify_me $bin/mount_iso.sh $bin/man2pdf.sh $bin/man2ps.sh $bin/update.sh $bin/notebook.sh $bin/conda_init.sh $bin/create_git_remote.sh $bin/create_git_remotes.sh
 
 projekte=./Projekte
 perl=$projekte/perl
 python=$projekte/python
 
-tar cvfz $dir/Projekte.tar.gz $perl/myperl $projekte/latex $python/download-sortierer $python/active-print $python/matrizen $python/beispiele $python/notebook $python/qiskit $python/pyquil $python/parallel $python/ipc $python/pylab_matplotlib_pandas $python/numpy_scipy_matplotlib $projekte/deb/randomizefile $projekte/automake/am_randomize_file $projekte/make $projekte/shell $projekte/tmux
+tar cvfz $dir/Projekte.tar.gz $perl/myperl $projekte/latex $python/download-sortierer $python/active-print $python/matrizen $python/beispiele $python/notebook $python/qiskit $python/pyquil $python/parallel $python/ipc $python/pylab_matplotlib_pandas $python/numpy_scipy_matplotlib $projekte/deb/randomizefile $projekte/automake $projekte/make $projekte/shell $projekte/tmux $projekte/git $projekte/dotfiles $projekte/qpython $projekte/cobol $projekte/eps_out_latex $projekte/ruby $projekte/c $projekte/docker
 
 # vim:ai sw=2
 
