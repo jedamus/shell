@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Dienstag, 15. Dezember 2020 09:16 von Leander Jedamus
+# modifiziert Dienstag, 15. Dezember 2020 11:38 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
 # modifiziert Donnerstag, 10. Dezember 2020 16:28 von Leander Jedamus
@@ -16,6 +16,9 @@ my_path=`pwd`
 clone()
 {
   git clone gitolite3@master:$1 $2
+  ## git clone https://github.com/jedamus/$1.git $2
+  ## git clone https://gitlab.com/jedamus/$1.git $2
+  ## git clone https://bitbucket.org/jedamus/$1.git $2
   echo ""
 };# clone
 
