@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Dienstag, 15. Dezember 2020 11:38 von Leander Jedamus
+# modifiziert Dienstag, 15. Dezember 2020 14:33 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
 # modifiziert Donnerstag, 10. Dezember 2020 16:28 von Leander Jedamus
@@ -85,7 +85,7 @@ cd ..
 
 cd ..
 
-# installation-part
+# Installation
 
 python=$HOME/Projekte/python
 perl=$HOME/Projekte/perl
@@ -115,6 +115,7 @@ echo ""
 # install vim
 cd .vim
 sh ./install3.sh
+## sh ./install2.sh
 cd ..
 echo ""
 
