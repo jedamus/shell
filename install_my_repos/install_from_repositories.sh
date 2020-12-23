@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Mittwoch, 23. Dezember 2020 12:17 von Leander Jedamus
+# modifiziert Mittwoch, 23. Dezember 2020 20:27 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
@@ -22,10 +22,20 @@ case "$target" in
   *)      export machtype="unknown" ;;
 esac
 
+target=`uname -v`
+
+case "$target" in
+  *Ubuntu*) export machsystem="Ubuntu" ;;
+  *Darwin*) export machsystem="MacOS" ;;
+  *)        export machsystem="unknown" ;;
+esac
+
+echo "Type is $machtype"
+echo "System is $machsystem"
+
 # debug-mode:
 ## export machtype="MacOS"
-
-echo "System is $machtype"
+## export machsystem="MacOS"
 
 clone()
 {
@@ -57,7 +67,7 @@ mkdir Projekte
 cd Projekte
 
 mkdir perl python c automake docker
-if [ $machtype = "Linux" ]; then
+if [ $machsystem = "Ubuntu" ]; then
   mkdir deb
 fi
 
@@ -99,8 +109,8 @@ clone am_randomize_file am_randomize_file
 clone am_yacc_and_lex am_yacc_and_lex
 cd ..
 
-# This only works with Linux systems.
-if [ $machtype = "Linux" ]; then
+# This only works with Ubuntu systems.
+if [ $machsystem = "Ubuntu" ]; then
   cd deb
   clone deb_randomizefile randomizefile
   cd ..
