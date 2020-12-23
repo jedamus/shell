@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Mittwoch, 23. Dezember 2020 10:24 von Leander Jedamus
+# modifiziert Mittwoch, 23. Dezember 2020 12:17 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
@@ -13,6 +13,19 @@
 ## HOME="$HOME/repositories"
 
 my_path=`pwd`
+
+target=`uname -s`
+
+case "$target" in
+  Darwin) export machtype="MacOS" ;;
+  Linux)  export machtype="Linux" ;;
+  *)      export machtype="unknown" ;;
+esac
+
+# debug-mode:
+## export machtype="MacOS"
+
+echo "System is $machtype"
 
 clone()
 {
@@ -42,7 +55,12 @@ clone vim-python .vim
 
 mkdir Projekte
 cd Projekte
-mkdir perl python c automake deb docker
+
+mkdir perl python c automake docker
+if [ $machtype = "Linux" ]; then
+  mkdir deb
+fi
+
 clone mygit git
 clone my_dotfiles dotfiles
 clone qpython-scripts qpython
@@ -59,8 +77,13 @@ clone myperl-tools myperl
 cd ..
 
 cd python
+
+# only works on Linux systems. It uses kernel functions.
+if [ $machtype = "Linux" ]; then
 clone download-sortierer download-sortierer
 clone active-print active-print
+fi
+
 clone python-parallel parallel
 clone py_matrizen matrizen
 clone py_ipc ipc
@@ -76,9 +99,12 @@ clone am_randomize_file am_randomize_file
 clone am_yacc_and_lex am_yacc_and_lex
 cd ..
 
-cd deb
-clone deb_randomizefile randomizefile
-cd ..
+# This only works with Linux systems.
+if [ $machtype = "Linux" ]; then
+  cd deb
+  clone deb_randomizefile randomizefile
+  cd ..
+fi
 
 cd docker
 clone install_my_repos install_my_repos
@@ -100,7 +126,12 @@ if [ ! $mode = "auto" ]; then
 else
   sh install.sh "Test User" "testuser@testuser.org"
 fi
-sh install_linux.sh
+if [ $machtype = "Linux" ]; then
+  sh install_linux.sh
+fi
+if [ $machtype = "MacOS" ]; then
+  sh install_macos.sh
+fi
 
 cd $HOME/Projekte/shell
 sh ./install.sh
@@ -115,8 +146,13 @@ echo ""
 
 # install vim
 cd .vim
-sh ./install3.sh "testuser@testuser.org" "www.testuser.org" "org.testuser"
-## sh ./install2.sh "testuser@testuser.org" "www.testuser.org" "org.testuser"
+
+if [ $machtype = "Linux" ]; then
+  sh ./install3.sh "testuser@testuser.org" "www.testuser.org" "org.testuser"
+fi
+if [ $machtype = "MacOS" ]; then
+  sh ./install2.sh "testuser@testuser.org" "www.testuser.org" "org.testuser"
+fi
 
 cd ..
 echo ""
@@ -135,13 +171,15 @@ cd $myperl
 sh ./install.sh
 echo ""
 
-cd $python/download-sortierer
-sh ./install.sh
-echo ""
+if [ $machtype = "Linux" ]; then
+  cd $python/download-sortierer
+  sh ./install.sh
+  echo ""
 
-cd $python/active-print
-sh ./install.sh
-echo ""
+  cd $python/active-print
+  sh ./install.sh
+  echo ""
+fi
 
 echo "Now log off completely and re-log in!"
 
