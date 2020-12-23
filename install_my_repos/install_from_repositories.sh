@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Mittwoch, 23. Dezember 2020 10:16 von Leander Jedamus
+# modifiziert Mittwoch, 23. Dezember 2020 10:24 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
@@ -98,7 +98,7 @@ cd $HOME/Projekte/git
 if [ ! $mode = "auto" ]; then
   sh install.sh
 else
-  sh install.sh "Test User" "testuser@example.org"
+  sh install.sh "Test User" "testuser@testuser.org"
 fi
 sh install_linux.sh
 
