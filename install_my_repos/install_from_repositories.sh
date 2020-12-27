@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Sonntag, 27. Dezember 2020 18:04 von Leander Jedamus
+# modifiziert Sonntag, 27. Dezember 2020 19:09 von Leander Jedamus
 # modifiziert Mittwoch, 23. Dezember 2020 20:20 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
@@ -13,10 +13,10 @@
 # debug-mode:
 ## HOME="$HOME/repositories"
 
-user="Test User"
-email="testuser@testuser.org"
-www="http://www.testuser.org/"
-package="org.testuser"
+name1="Test User"
+email1="testuser@testuser.org"
+www1="http://www.testuser.org/"
+package1="org.testuser"
 
 my_path=`pwd`
 
@@ -54,11 +54,30 @@ clone()
 
 if [ -z $1 ];then
   mode=auto
+
+  name="$name1"
+  email="$email1"
+  www="$www1"
+  package="$package1"
 else
   mode=$1
-fi
 
-if [ ! $mode = "auto" ]; then
+  read -p "What is your name: " name
+  echo "setting your name to $name"
+  echo ""
+
+  read -p "What is your email-address (ljedamus@web.de): " email
+  echo "setting your email-address to $email"
+  echo ""
+
+  read -p "What is your WWW-address (http://www.jedamus-solutions.de/): " www
+  echo "setting your www-address to $www"
+  echo ""
+
+  read -p "What is your Package-string (de.jedamus-solutions): " package
+  echo "setting your package-string to $package"
+  echo ""
+
   echo "After entering your password, write the following to change the shell:"
   echo "\"/bin/zsh\":"
   chsh
@@ -137,11 +156,8 @@ bin=$HOME/bin
 mkdir -p $bin
 
 cd $HOME/Projekte/git
-if [ ! $mode = "auto" ]; then
-  sh install.sh
-else
-  sh install.sh "$user" "$email"
-fi
+sh install.sh "$name" "$email"
+
 if [ $machtype = "Linux" ]; then
   sh install_linux.sh
 fi
