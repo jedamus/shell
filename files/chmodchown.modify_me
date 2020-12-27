@@ -14,7 +14,7 @@ usage() {
   exit 0
 };# usage()
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
   usage
 else
   case "$1" in
@@ -23,10 +23,10 @@ else
   esac
 fi
 
-find $1 -type d -exec chmod a+rx {} \;
-find $1 -type f -exec chmod a+r {} \;
-find $1 -type d -exec chown ${USER}:${USER} {} \;
-find $1 -type f -exec chown ${USER}:${USER} {} \;
+find "$1" -type d -exec chmod a+rx {} \;
+find "$1" -type f -exec chmod a+r {} \;
+find "$1" -type d -exec chown ${USER}:${USER} {} \;
+find "$1" -type f -exec chown ${USER}:${USER} {} \;
 
 # vim:ai sw=2
 
