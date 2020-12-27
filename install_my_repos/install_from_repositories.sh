@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Mittwoch, 23. Dezember 2020 20:27 von Leander Jedamus
+# modifiziert Sonntag, 27. Dezember 2020 18:04 von Leander Jedamus
+# modifiziert Mittwoch, 23. Dezember 2020 20:20 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
 # modifiziert Montag, 14. Dezember 2020 23:33 von Leander Jedamus
 # modifiziert Freitag, 11. Dezember 2020 09:33 von Leander Jedamus
@@ -11,6 +12,11 @@
 
 # debug-mode:
 ## HOME="$HOME/repositories"
+
+user="Test User"
+email="testuser@testuser.org"
+www="http://www.testuser.org/"
+package="org.testuser"
 
 my_path=`pwd`
 
@@ -134,7 +140,7 @@ cd $HOME/Projekte/git
 if [ ! $mode = "auto" ]; then
   sh install.sh
 else
-  sh install.sh "Test User" "testuser@testuser.org"
+  sh install.sh "$user" "$email"
 fi
 if [ $machtype = "Linux" ]; then
   sh install_linux.sh
@@ -158,10 +164,10 @@ echo ""
 cd .vim
 
 if [ $machtype = "Linux" ]; then
-  sh ./install3.sh "testuser@testuser.org" "www.testuser.org" "org.testuser"
+  sh ./install3.sh "$email" "$www" "$package"
 fi
 if [ $machtype = "MacOS" ]; then
-  sh ./install2.sh "testuser@testuser.org" "www.testuser.org" "org.testuser"
+  sh ./install2.sh "$email" "$www" "$package"
 fi
 
 cd ..
