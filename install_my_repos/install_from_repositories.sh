@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
+# modifiziert Montag, 28. Dezember 2020 16:33 von Leander Jedamus
 # modifiziert Sonntag, 27. Dezember 2020 19:09 von Leander Jedamus
 # modifiziert Mittwoch, 23. Dezember 2020 20:20 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
@@ -52,34 +53,31 @@ clone()
   echo ""
 };# clone
 
-if [ -z $1 ];then
-  mode=auto
-
+if [ -z "$1" ];then
   name="$name1"
   email="$email1"
   www="$www1"
   package="$package1"
 else
-  mode=$1
-
-  read -p "What is your name: " name
+  read -p "What is your name ($name1): " name
   echo "setting your name to $name"
   echo ""
 
-  read -p "What is your email-address (ljedamus@web.de): " email
+  read -p "What is your email-address ($email1): " email
   echo "setting your email-address to $email"
   echo ""
 
-  read -p "What is your WWW-address (http://www.jedamus-solutions.de/): " www
+  read -p "What is your WWW-address ($www1): " www
   echo "setting your www-address to $www"
   echo ""
 
-  read -p "What is your Package-string (de.jedamus-solutions): " package
+  read -p "What is your Package-string ($package1): " package
   echo "setting your package-string to $package"
   echo ""
 
   echo "After entering your password, write the following to change the shell:"
   echo "\"/bin/zsh\":"
+
   chsh
 fi
 
