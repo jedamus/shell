@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Montag, 28. Dezember 2020 16:33 von Leander Jedamus
+# modifiziert Dienstag, 29. Dezember 2020 19:13 von Leander Jedamus
+# modifiziert Montag, 28. Dezember 2020 16:31 von Leander Jedamus
 # modifiziert Sonntag, 27. Dezember 2020 19:09 von Leander Jedamus
 # modifiziert Mittwoch, 23. Dezember 2020 20:20 von Leander Jedamus
 # modifiziert Dienstag, 15. Dezember 2020 14:22 von Leander Jedamus
@@ -147,23 +148,28 @@ cd ..
 
 # Installation
 
-python=$HOME/Projekte/python
-perl=$HOME/Projekte/perl
+projekte=$HOME/Projekte
+python=$projekte/python
+perl=$projekte/perl
 bin=$HOME/bin
 
 mkdir -p $bin
 
-cd $HOME/Projekte/git
-sh install.sh "$name" "$email"
+cd $projekte/git
+sh ./install.sh "$name" "$email"
 
 if [ $machtype = "Linux" ]; then
-  sh install_linux.sh
+  sh ./install_linux.sh
 fi
 if [ $machtype = "MacOS" ]; then
-  sh install_macos.sh
+  sh ./install_macos.sh
 fi
 
-cd $HOME/Projekte/shell
+cd $projekte/shell
+sh ./install.sh
+echo ""
+
+cd $projekte/tmux
 sh ./install.sh
 echo ""
 
@@ -188,10 +194,8 @@ cd ..
 echo ""
 
 # install Projekte
-projekte=$HOME/Projekte
 dotfiles=$projekte/dotfiles
 myperl=$projekte/perl/myperl
-python=$projekte/python
 
 cd $dotfiles
 sh ./install.sh
