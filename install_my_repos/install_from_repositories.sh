@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Dienstag, 29. Dezember 2020 19:13 von Leander Jedamus
+# modifiziert Mittwoch, 13. Januar 2021 07:09 von Leander Jedamus
+# modifiziert Dienstag, 29. Dezember 2020 18:37 von Leander Jedamus
 # modifiziert Montag, 28. Dezember 2020 16:31 von Leander Jedamus
 # modifiziert Sonntag, 27. Dezember 2020 19:09 von Leander Jedamus
 # modifiziert Mittwoch, 23. Dezember 2020 20:20 von Leander Jedamus
@@ -19,6 +20,7 @@ name1="Test User"
 email1="testuser@testuser.org"
 www1="http://www.testuser.org/"
 package1="org.testuser"
+printers="laserjet duplex"
 
 my_path=`pwd`
 
@@ -211,7 +213,7 @@ if [ $machtype = "Linux" ]; then
   echo ""
 
   cd $python/active-print
-  sh ./install.sh
+  sh ./install.sh $printers
   echo ""
 fi
 
