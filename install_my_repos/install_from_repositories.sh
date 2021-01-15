@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Donnerstag, 03. Dezember 2020 18:37 (C) 2020 von Leander Jedamus
-# modifiziert Mittwoch, 13. Januar 2021 07:09 von Leander Jedamus
+# modifiziert Freitag, 15. Januar 2021 11:40 von Leander Jedamus
+# modifiziert Mittwoch, 13. Januar 2021 06:57 von Leander Jedamus
 # modifiziert Dienstag, 29. Dezember 2020 18:37 von Leander Jedamus
 # modifiziert Montag, 28. Dezember 2020 16:31 von Leander Jedamus
 # modifiziert Sonntag, 27. Dezember 2020 19:09 von Leander Jedamus
@@ -16,11 +17,11 @@
 # debug-mode:
 ## HOME="$HOME/repositories"
 
-name1="Test User"
-email1="testuser@testuser.org"
-www1="http://www.testuser.org/"
-package1="org.testuser"
-printers="laserjet duplex"
+name_="Test User"
+email_="testuser@testuser.org"
+www_="http://www.testuser.org/"
+package_="org.testuser"
+printers_="laserjet duplex"
 
 my_path=`pwd`
 
@@ -57,25 +58,30 @@ clone()
 };# clone
 
 if [ -z "$1" ];then
-  name="$name1"
-  email="$email1"
-  www="$www1"
-  package="$package1"
+  name="$name_"
+  email="$email_"
+  www="$www_"
+  package="$package_"
+  printers="$printers_"
 else
-  read -p "What is your name ($name1): " name
-  echo "setting your name to $name"
+  read -p "Enter your printer name(s) delimited by space: " printers
+  echo "setting printers to \"$printers\""
   echo ""
 
-  read -p "What is your email-address ($email1): " email
-  echo "setting your email-address to $email"
+  read -p "What is your name ($name_): " name
+  echo "setting your name to \"$name\""
   echo ""
 
-  read -p "What is your WWW-address ($www1): " www
-  echo "setting your www-address to $www"
+  read -p "What is your email-address ($email_): " email
+  echo "setting your email-address to \"$email\""
   echo ""
 
-  read -p "What is your Package-string ($package1): " package
-  echo "setting your package-string to $package"
+  read -p "What is your WWW-address ($www_): " www
+  echo "setting your www-address to \"$www\""
+  echo ""
+
+  read -p "What is your Package-string ($package_): " package
+  echo "setting your package-string to \"$package\""
   echo ""
 
   echo "After entering your password, write the following to change the shell:"
