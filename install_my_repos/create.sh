@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 # erzeugt Samstag, 21. März 2020 13:53 (C) 2020 von Leander Jedamus
+# modifiziert Dienstag, 12. Januar 2021 21:49 von Leander Jedamus
+# modifiziert Dienstag, 29. Dezember 2020 15:02 von Leander Jedamus
 # modifiziert Samstag, 05. Dezember 2020 08:38 von Leander Jedamus
 # modifiziert Freitag, 04. Dezember 2020 18:47 von Leander Jedamus
 # modifiziert Donnerstag, 03. Dezember 2020 17:20 von Leander Jedamus
@@ -28,14 +30,14 @@ dir=$stick/von_leander
 dir=$HOME/Install_My_Repos
 
 cd
-tar cvfz $dir/dotfiles.tar.gz .shenv .exrc .cshrc .tcshrc .login .logout .history .cshdirs .bash_profile .bashrc .bash_logout .bash_history .mkshrc .profile .zshenv .zprofile .zshrc .zlogin .zlogout .zsh_history .gitconfig .tmux.conf .condarc .condarc.example .forest_config .byobu .tmuxinator .tmux
+tar cvfz $dir/dotfiles.tar.gz .shenv .exrc .cshrc .tcshrc .login .logout .history .cshdirs .bash_profile .bashrc .bash_logout .bash_history .mkshrc .profile .zshenv .zprofile .zshrc .zlogin .zlogout .zsh_history .gitconfig .tmux.conf .condarc .condarc.example .forest_config .byobu .tmuxinator .tmux .ipython
 
 tar cvfz $dir/vim.tar.gz ./.vim
 tar cvfz $dir/zsh.tar.gz ./.zsh ./todo.txt
 
 bin=./bin
 
-tar cvfz $dir/bin.tar.gz $bin/nocaps.sh $bin/gitinit.sh $bin/rep.sh $bin/evince.sh $bin/ogg.sh $bin/my_options.sh $bin/grep_in_dpkg.sh $bin/chmodchown.modify_me $bin/mount_iso.sh $bin/man2pdf.sh $bin/man2ps.sh $bin/update.sh $bin/notebook.sh $bin/conda_init.sh $bin/create_git_remote.sh $bin/create_git_remotes.sh
+tar cvfz $dir/bin.tar.gz $bin/nocaps.sh $bin/gitinit.sh $bin/rep.sh $bin/evince.sh $bin/ogg.sh $bin/my_options.sh $bin/grep_in_dpkg.sh $bin/chmodchown.modify_me $bin/mount_iso.sh $bin/man2pdf.sh $bin/man2ps.sh $bin/update.sh $bin/notebook.sh $bin/conda_init.sh $bin/create_git_remote.sh $bin/create_git_remotes.sh $bin/logger.sh $bin/my_short_backup.sh
 
 projekte=./Projekte
 perl=$projekte/perl
