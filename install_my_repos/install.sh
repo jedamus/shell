@@ -43,6 +43,14 @@ case "$target" in
   *)        export machsystem="unknown" ;;
 esac
 
+if [ $machsystem = "unknown" ]; then
+  processor=`uname -m`
+  case "$processor" in
+    *arm*) export machsystem="Arm" ;;
+    *)     export machsystem="unknown" ;;
+  esac
+fi
+
 echo "Type is $machtype"
 echo "System is $machsystem"
 
