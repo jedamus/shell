@@ -15,12 +15,13 @@
 # modifiziert Donnerstag, 03. Dezember 2020 20:11 von Leander Jedamus
 
 # debug-mode:
-## HOME="$HOME/repositories"
+HOME="$HOME/repositories"
+mkdir -p $HOME
 
-name_="Test User"
-email_="testuser@testuser.org"
-www_="http://www.testuser.org/"
-package_="org.testuser"
+name_="Leander Jedamus"
+email_="ljedamus@web.de"
+www_="http://www.ljedamus.de/"
+package_="de.ljedamus"
 printers_="laserjet duplex"
 
 my_path=`pwd`
@@ -41,6 +42,14 @@ case "$target" in
   *)        export machsystem="unknown" ;;
 esac
 
+if [ $machsystem = "unknown" ]; then
+  processor=`uname -m`
+  case "$processor" in
+    *arm*) export machsystem="Arm" ;;
+    *)     export machsystem="unknown" ;;
+  esac
+fi
+
 echo "Type is $machtype"
 echo "System is $machsystem"
 
@@ -50,8 +59,8 @@ echo "System is $machsystem"
 
 clone()
 {
-  git clone gitolite3@master:$1 $2
-  ## git clone https://github.com/jedamus/$1.git $2
+  ## git clone gitolite3@master:$1 $2
+  git clone https://github.com/jedamus/$1.git $2
   ## git clone https://gitlab.com/jedamus/$1.git $2
   ## git clone https://bitbucket.org/jedamus/$1.git $2
   echo ""
@@ -99,7 +108,7 @@ mkdir Projekte
 cd Projekte
 
 mkdir perl python c automake docker
-if [ $machsystem = "Ubuntu" ]; then
+if [ $machsystem = "Ubuntu" -o $machsystem = "Arm" ]; then
   mkdir deb
 fi
 
@@ -112,7 +121,7 @@ clone tmux-config tmux
 clone eps_out_latex eps_out_latex
 clone latex latex
 clone my-ruby ruby
-clone my_shell shell
+clone shell shell
 
 cd perl
 clone myperl-tools myperl
@@ -132,7 +141,7 @@ clone py_ipc ipc
 cd ..
 
 cd c
-clone randomize_file randomize_file
+clone deb_randomizefile randomize_file
 clone make_check_host_system check_host_system
 cd ..
 
@@ -142,7 +151,7 @@ clone am_yacc_and_lex am_yacc_and_lex
 cd ..
 
 # This only works with Ubuntu systems.
-if [ $machsystem = "Ubuntu" ]; then
+if [ $machsystem = "Ubuntu" -o $machsystem = "Arm" ]; then
   cd deb
   clone deb_randomizefile randomizefile
   cd ..
