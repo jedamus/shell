@@ -122,6 +122,7 @@ clone eps_out_latex eps_out_latex
 clone latex latex
 clone my-ruby ruby
 clone shell shell
+#clone my_shell shell (used for gitolite3 on master!)
 
 cd perl
 clone myperl-tools myperl
@@ -142,6 +143,7 @@ cd ..
 
 cd c
 clone deb_randomizefile randomize_file
+#clone randomize_file randomize_file (used for gitolite3@master !)
 clone make_check_host_system check_host_system
 cd ..
 
