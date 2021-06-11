@@ -4,7 +4,16 @@
 # modifiziert Dienstag, 29. Dezember 2020 14:30 von Leander Jedamus
 # modifiziert Sonntag, 22. November 2020 09:43 von Leander Jedamus
 
-jupyter-lab --browser="firefox"
+d=`pwd`"/env/bin"
+f=$d/activate
+if [ -f $f ]; then
+  . $f
+  #export PATH=$d:${PATH}
+  #echo $PATH
+fi
+
+#jupyter-notebook --browser="firefox"
+jupyter-notebook --browser="chromium-browser"
 
 # vim:ai sw=2
 
