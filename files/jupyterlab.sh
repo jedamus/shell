@@ -5,9 +5,9 @@
 # modifiziert Sonntag, 22. November 2020 09:43 von Leander Jedamus
 
 d=`pwd`"/env/bin"
-f=$d/activate
-if [ -f $f ]; then
-  . $f
+f="$d/activate"
+if [ -f "$f" ]; then
+  . "$f"
   #export PATH=$d:${PATH}
   #echo $PATH
 fi
