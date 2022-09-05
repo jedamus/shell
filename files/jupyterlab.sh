@@ -8,6 +8,9 @@
 
 #set -x
 
+#export BROWSER="firefox"
+export BROWSER="chromium-browser"
+
 d=`pwd`
 d_env="$d/env/bin"
 d_ipython="$d/.ipython"
@@ -24,9 +27,8 @@ if [ -d "$d_ipython" ]; then
   export IPYTHONDIR="$d_ipython"
 fi
 
-#jupyter-notebook --browser="firefox"
-#jupyter-notebook --browser="chromium-browser"
-jupyter-lab --browser="chromium-browser"
+#jupyter-notebook
+jupyter-lab
 
 # vim:ai sw=2
 
