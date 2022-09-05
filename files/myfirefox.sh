@@ -6,7 +6,7 @@
 PROFILEPATH="$HOME/.mozilla/firefox"
 PROFILE="zqx0o56g.Netflix"
 
-firefox --profile $PROFILEPATH/$PROFILE $*
+firefox --profile "$PROFILEPATH/$PROFILE" $*
 #firefox $*
 
 # vim:ai sw=2
