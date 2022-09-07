@@ -17,10 +17,10 @@ d=`pwd`
 d_env="$d/env/bin"
 d_ipython="$d/.ipython"
 
-f="$d_env/activate"
+f_activate="$d_env/activate"
 
-if [ -f "$f" ]; then
-  . "$f"
+if [ -f "$f_activate" ]; then
+  . "$f_activate"
   #export PATH=$d:${PATH}
   #echo $PATH
 fi
