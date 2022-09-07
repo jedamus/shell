@@ -5,10 +5,20 @@
 
 d=`pwd`
 d_ipython="$d/.ipython"
+d_env="$d/env/bin"
+
+f_activate="$d_env/activate"
 f_autorun="autorun.ipy"
+
 options=""
 #options="$options --no-simple-prompt"
 options="$options --no-confirm-exit"
+
+if [ -f "$f_activate" ]; then
+  . "$f_activate"
+  #export PATH=$d:${PATH}
+  #echo $PATH
+fi
 
 if [ -d "$d_ipython" ]; then
   export IPYTHONDIR="$d_ipython"
