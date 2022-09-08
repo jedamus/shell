@@ -9,8 +9,8 @@ d_ipython="$d/.ipython"
 python3 -m venv env
 
 mkdir -p $d_ipython
+
 export IPYTHONDIR="$d_ipython"
 ipython profile create default
 
 # vim:ai sw=2
-
