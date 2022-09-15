@@ -5,7 +5,7 @@
 
 d=`pwd`
 d_ipython="$d/.ipython"
-d_env="$d/env/bin"
+d_env="$d/$PY_ENV_DIR/bin"
 
 f_activate="$d_env/activate"
 f_autorun="autorun.ipy"

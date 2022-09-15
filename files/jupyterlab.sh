@@ -14,7 +14,7 @@
 export BROWSER="chromium-browser"
 
 d=`pwd`
-d_env="$d/env/bin"
+d_env="$d/$PY_ENV_DIR/bin"
 d_ipython="$d/.ipython"
 
 f_activate="$d_env/activate"

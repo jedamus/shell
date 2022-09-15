@@ -6,7 +6,7 @@
 d=`pwd`
 d_ipython="$d/.ipython"
 
-python3 -m venv env
+python3 -m venv $PY_ENV_DIR
 
 mkdir -p $d_ipython
 
