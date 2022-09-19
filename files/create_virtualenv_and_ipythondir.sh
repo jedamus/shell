@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # erzeugt Mittwoch, 07. September 2022 19:56 (C) 2022 von Leander Jedamus
+# modifiziert Montag, 19. September 2022 18:56 von Leander Jedamus
 # modifiziert Mittwoch, 07. September 2022 17:36 von Leander Jedamus
 
 export PY_ENV_DIR=${PY_ENV_DIR:-env}
