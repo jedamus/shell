@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 
 # erzeugt Montag, 05. September 2022 17:12 (C) 2022 von Leander Jedamus
+# modifiziert Montag, 19. September 2022 18:30 von Leander Jedamus
 # modifiziert Montag, 05. September 2022 17:36 von Leander Jedamus
+
+export PY_ENV_DIR=${PY_ENV_DIR:-env}
 
 d=`pwd`
 d_ipython="$d/.ipython"
