@@ -1,5 +1,12 @@
 #/bin/sh
 
+# erzeugt Montag, 19. Dezember 2022 12:35 (C) 2022 von Leander Jedamus
+# modifiziert Montag, 19. Dezember 2022 12:45 von Leander Jedamus
+
+tmpdir="/tmp"
+docker_output="$tmpdir/update_docker.$$.output"
+docker_image_list="$tmpdir/update_docker.$$.list"
+
 call_docker()
 {
   #echo $*
@@ -12,8 +19,8 @@ call_docker()
   done
 }
 
-docker image ls > test
+docker image ls > $docker_output
 
-awk -F\  -e "{print \$1}" < test > test2
+awk -F\  -e "{print \$1}" < $docker_output > $docker_image_list
 
-call_docker $(cat test2)
+call_docker $(cat $docker_image_list)
