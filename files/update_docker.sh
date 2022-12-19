@@ -26,3 +26,6 @@ awk -F\  -e "{print \$1}" < $docker_output > $docker_image_list
 call_docker $(cat $docker_image_list)
 
 rm $docker_output $docker_image_list
+
+# vim:ai sw=2
+
