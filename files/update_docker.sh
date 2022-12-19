@@ -24,3 +24,5 @@ docker image ls > $docker_output
 awk -F\  -e "{print \$1}" < $docker_output > $docker_image_list
 
 call_docker $(cat $docker_image_list)
+
+rm $docker_output $docker_image_list
